@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GuideFragment">
+
+        <HorizontalScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginBottom="15dp"
+            android:focusable="true"
+            android:nextFocusDown="@id/vrt_grid_view"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="2dp"
+            android:scrollbars="none"
+            android:layout_marginEnd="35dp"
+            android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/time_slot"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal" />
+
+        </HorizontalScrollView>
+
+        <androidx.leanback.widget.VerticalGridView
+            android:id="@+id/vrt_grid_view"
+            android:layout_below="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:paddingTop="5dp"
+            android:nextFocusUp="@id/scrollView"
+            android:paddingBottom="2dp"
+            android:visibility="visible"/>
+
+</RelativeLayout>

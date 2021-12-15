@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="10dp"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:id="@+id/container_collapse"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/lb_background_protection"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/channel_logo_small"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/movie" />
+
+        <TextView
+            android:id="@+id/txt_collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Fast and Furious"
+            android:textSize="18dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/container_expand"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@color/lb_background_protection"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/channel_logo"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/movie">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/channel_logo">
+
+            <ImageView
+                android:id="@+id/iv_background"
+                android:layout_width="280dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="9:00 - 9:30 PM"
+                android:textColor="@color/lb_tv_white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_min_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tv_time"
+                android:text="4 Min Left"
+                android:textColor="@color/lb_tv_white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_show_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_time"
+                android:layout_marginTop="5dp"
+                android:text="Fast and Furious"
+                android:textColor="@color/lb_tv_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_season"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_show_name"
+                android:layout_marginTop="5dp"
+                android:text="S1 S2"
+                android:textColor="@color/lb_tv_white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_show_name"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/tv_season"
+                android:text="30 Min"
+                android:textColor="@color/lb_tv_white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_duration"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Aajskfjksnkslfksfgnslkfjkshgjsdvljksdjhgdgjd;jkfghdighdgldjhgildjghkldhjgdilhgdlkg"
+                android:textColor="@color/lb_tv_white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

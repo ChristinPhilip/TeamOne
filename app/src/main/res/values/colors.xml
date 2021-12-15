@@ -6,4 +6,7 @@
     <color name="selected_background">#ffaa3f</color>
     <color name="default_background">#3d3d3d</color>
     <color name="merron">#800000</color>
+    <color name="black">#FFFFFF</color>
+    <color name="white_selected">#f0f0f0</color>
+    <color name="blue_focused">#BF32AFF3</color>
 </resources>

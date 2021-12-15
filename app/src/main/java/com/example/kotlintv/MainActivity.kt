@@ -6,6 +6,7 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
+import java.util.*
 
 
 class MainActivity : FragmentActivity(),View.OnClickListener {
@@ -14,6 +15,7 @@ class MainActivity : FragmentActivity(),View.OnClickListener {
     private lateinit var mSports: TextView
     private lateinit var mChannels: TextView
     private lateinit var header: TextView
+    private lateinit var mGuide: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +83,20 @@ class MainActivity : FragmentActivity(),View.OnClickListener {
                 mChannels.setTextColor(Color.WHITE)
             }
         }
+
+        mGuide.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                mGuide.startAnimation(
+                    AnimationUtils.loadAnimation(
+                        applicationContext,
+                        android.R.anim.slide_in_left
+                    )
+                )
+                mGuide.setTextColor(Color.BLACK)
+            } else {
+                mGuide.setTextColor(Color.WHITE)
+            }
+        }
     }
 
     private fun init() {
@@ -88,11 +104,13 @@ class MainActivity : FragmentActivity(),View.OnClickListener {
         mMovie = findViewById(R.id.movies_tv)
         mSports = findViewById(R.id.sports_tv)
         mChannels = findViewById(R.id.channels_tv)
+        mGuide = findViewById(R.id.guide_tv)
         header = findViewById(R.id.header)
         mHome.setOnClickListener(this)
         mMovie.setOnClickListener(this)
         mSports.setOnClickListener(this)
         mChannels.setOnClickListener(this)
+        mGuide.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -109,7 +127,9 @@ class MainActivity : FragmentActivity(),View.OnClickListener {
             R.id.channels_tv->{
                 openFragment("Channels")
             }
-
+            R.id.guide_tv->{
+                openGuide()
+            }
         }
     }
 
@@ -118,5 +138,11 @@ class MainActivity : FragmentActivity(),View.OnClickListener {
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_browse_fragment, RowFragment(page))
             .commit()
+    }
+
+    private fun openGuide(){
+        header.text = "Upcoming"
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_browse_fragment, GuideFragment()).commit()
     }
 }

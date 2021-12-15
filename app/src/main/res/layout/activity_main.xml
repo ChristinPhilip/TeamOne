@@ -70,7 +70,21 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:nextFocusUp="@id/sports_tv"
+            android:nextFocusDown="@id/guide_tv"
             android:text="Channels"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/guide_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_below="@+id/channels_tv"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:nextFocusUp="@id/channels_tv"
+            android:text="Guide"
             android:textSize="20sp" />
     </RelativeLayout>
     <TextView
